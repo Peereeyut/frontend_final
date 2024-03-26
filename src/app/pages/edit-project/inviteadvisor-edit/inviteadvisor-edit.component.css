@@ -1,0 +1,22 @@
+.column {
+    float: left;
+    width: 60%;
+    padding: 10px;
+    height: 10px; /*Should be removed. Only for demonstration*/
+  }
+.warpt{
+/*   min-height: 100px;
+  max-height: 100%; */
+}
+  * {
+    box-sizing: border-box;
+  }
+
+  .btninvite{
+    float: right;
+    padding: 10px;
+  }
+  .box{
+    margin-top: 15px;
+    /* text-align: center; */
+  }

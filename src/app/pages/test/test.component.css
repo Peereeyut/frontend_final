@@ -1,0 +1,16 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  #content {
+    margin: 20px;
+  }
+  
+  #heading {
+    color: blue;
+  }
+  
+  #paragraph {
+    color: green;
+  }
+  

@@ -1,0 +1,31 @@
+<div class="filters-container">
+
+  <mat-card class="major-card dash ">
+    <mat-card-header>
+    <mat-title class="mb-3">
+      <a routerLink="/dashboard" class="text-lg"> Dashboard </a>
+      <mat-icon> list_alt</mat-icon>
+    </mat-title>
+  </mat-card-header>
+  </mat-card><br>
+
+  <mat-card class="major-card">
+    <mat-card-header>
+      <mat-card-title>{{"Major"|translate}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <!-- filters.component.html -->
+      <mat-selection-list [multiple]="false" >
+        <mat-list-option (click)="onCategorySelected('All')" selected="">
+          <a class="text-sm">{{"ALL" |translate}}</a>
+        </mat-list-option>
+        <div class="" *ngFor="let item of listcategory">
+          <mat-list-option (click)="onCategorySelected(item)" >
+            <a class="text-sm">{{item}}</a>
+          </mat-list-option>
+        </div>
+      </mat-selection-list>
+
+    </mat-card-content>
+  </mat-card>
+</div>

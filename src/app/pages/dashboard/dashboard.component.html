@@ -1,0 +1,73 @@
+
+
+
+<mat-card class="custom-mat-card">
+  <mat-drawer mode="side" opened class="p-6">
+    <div class="filters-container">
+      <mat-card class="major-card dash ">
+        <mat-card-header>
+          <mat-title class="mb-3">
+            <a routerLink="/dashboard" class="text-lg"> Dashboard </a>
+            <mat-icon> list_alt</mat-icon>
+          </mat-title>
+        </mat-card-header>
+      </mat-card><br>
+
+      <mat-card class="major-card">
+        <mat-card-header>
+          <mat-card-title>Major</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <!-- filters.component.html -->
+          <mat-selection-list [multiple]="false">
+            <mat-list-option (click)="onCategorySelected('All')" selected="true">
+              <a class="text-sm">All</a>
+            </mat-list-option>
+            <div class="" *ngFor="let item of listcategory">
+              <mat-list-option (click)="onCategorySelected(item)" >
+                <a class="text-sm">{{item}}</a>
+              </mat-list-option>
+            </div>
+          </mat-selection-list>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-drawer>
+  
+  <mat-drawer-container class="min-h-full max-w-7xl border-x">
+    <mat-drawer-content class="p-6">
+      <mat-card>
+
+        <!--  -->
+      </mat-card>
+      <mat-tab-group>
+        <mat-tab label="Many project">
+          <br>
+          <h1 style="text-align: center;"><b>Statistics Project Engineer</b> </h1>
+          <div >
+            <div ><br>
+              <apx-chart [series]="pie.series" [chart]="pie.chart" [labels]="pie.labels" [title]="pie.title" [tooltip]="pie.tooltip"
+                [responsive]="pie.responsive"></apx-chart>
+              <apx-chart [series]="bar.series" [chart]="bar.chart" [dataLabels]="bar.dataLabels" [title]="bar.title"
+                [plotOptions]="bar.plotOptions" [xaxis]="bar.xaxis" ></apx-chart>
+            </div>
+          </div>
+        </mat-tab>
+        <!--  -->
+        <mat-tab label="Many keyword">
+          <br>
+          <h1 style="text-align: center;"><b>Statistics keyword Engineer</b> </h1>
+          <div class="chartContainer">
+            <div><br>
+              <apx-chart [series]="piekey.series" [chart]="piekey.chart" [labels]="piekey.labels" [title]="piekey.title" [tooltip]="piekey.tooltip"
+                [responsive]="piekey.responsive"></apx-chart>
+             
+            </div>
+          </div>
+
+        </mat-tab>
+      </mat-tab-group>
+
+    </mat-drawer-content>
+  </mat-drawer-container>
+</mat-card>
